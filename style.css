@@ -5,4 +5,40 @@
 
 body {
     background-color: #101234;
+    color: azure;
+}
+
+main {
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template: 
+        "header header  header  " auto
+        "nav    article aside   " 1fr
+        "nav    footer  footer  " auto /
+        auto    1fr     auto;
+}
+
+header {
+    grid-area: header;
+    margin: 1%;
+    padding: 10px;
+}
+
+article {
+    grid-area: article;
+    margin: 1%;
+    padding: 10px;
+}
+
+aside {
+    grid-area: aside;
+}
+
+nav {
+    grid-area: nav;
+}
+
+footer {
+    grid-area: footer;
 }
