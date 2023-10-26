@@ -6,39 +6,33 @@
 body {
     background-color: #101234;
     color: azure;
-}
-
-main {
+    position: absolute;
     height: 100%;
-    overflow: hidden;
-    display: grid;
-    grid-template: 
-        "header header  header  " auto
-        "nav    article aside   " 1fr
-        "nav    footer  footer  " auto /
-        auto    1fr     auto;
+    width: 100%;
 }
 
-header {
-    grid-area: header;
-    margin: 1%;
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main div {
+    width: 80%;
     padding: 10px;
 }
 
-article {
-    grid-area: article;
-    margin: 1%;
-    padding: 10px;
+.header {
+    display: flex;
+    height: 50px;
+    background-color: brown;
+    align-items: center;
 }
 
-aside {
-    grid-area: aside;
+.article {
+    background-color: cadetblue;
 }
 
-nav {
-    grid-area: nav;
-}
-
-footer {
-    grid-area: footer;
+.footer {
+    background-color: black;
 }
