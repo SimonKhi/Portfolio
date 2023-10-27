@@ -20,6 +20,7 @@ header {
     align-items: center;
 }
 
+/* Barra de navegacion */
 .logo {
     font-size: 1.3rem;
     font-weight: 800;
@@ -44,7 +45,7 @@ nav a.active, nav a:hover {
     background-color: white;
     color: black;
     border-radius: 1rem;
-    transition: all.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 #click {
@@ -55,13 +56,68 @@ nav a.active, nav a:hover {
     display: none;
 }
 
+/* Contenido */
 article {
-    display: flex;
-    max-width: 80%;
-    align-items: center;
+    margin: 2rem 8.5rem;
     background-color: cadetblue;
+    color: antiquewhite;
 }
 
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem auto;
+}
+
+.main h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.main p{
+    margin-top: 1rem;
+    font-size: .98rem;
+}
+
+/* Responsivo para celulares */
+@media only screen and (max-width: 480px){
+    .menu {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    header {
+        padding: 0.7rem 1rem;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    nav {
+        position: absolute;
+        display: grid;
+        top: 75px;
+        width: calc(100% - 40px);
+        text-align: center;
+        background-color: red;
+        left: -100%;
+        /* right: 100%; */
+    }
+
+    #click:checked~nav {
+        left: 0%;
+        transition: all 0.3s ease;
+    }
+
+    article {
+        margin: 1rem 1.5rem;
+    }
+}
+
+/* Footer */
 footer {
     background-color: black;
 }
