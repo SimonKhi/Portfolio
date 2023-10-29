@@ -10,22 +10,23 @@ body {
 }
 
 header {
+    background-color: #000;
+    opacity: .9;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+/* Barra de navegacion */
+.navegacion {
     padding: 1.7rem 1rem;
-    background: #000;
-    opacity: .8;
     display: flex;
-    position: sticky;
     justify-content: space-between;
     max-width: 80%;
     margin: auto;
     align-items: center;
-    
-    /* padding-left: 8rem;
-    padding-right: 8rem;
-    max-width: 100%; */
 }
 
-/* Barra de navegacion */
 .logo {
     font-size: 1.3rem;
     font-weight: 800;
@@ -61,12 +62,14 @@ nav a.active, nav a:hover {
     display: none;
 }
 
-/* Contenido */
+/* Contenido */ 
 section {
+    padding-top: 20px;
     margin: 2rem 8.5rem;
     color: antiquewhite;
 }
 
+/* En la Sección de Inicio*/
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -85,6 +88,43 @@ section {
     font-size: .98rem;
 }
 
+.main h1 span:nth-child(1) {
+    font-size: 1.5rem;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
+}
+
+.social a {
+    color: azure;
+    font-size: 1.5rem;
+    padding: .35rem;
+    text-align: center;
+    width: 25px;
+    border-radius: 50%;
+}
+
+.social a:hover {
+    color: blue;
+    background-color: white;
+    transition: all .3s ease-in-out;
+}
+
+.imagen {
+    background-repeat: no-repeat;
+    background-position: 0 -75px;
+    width: 528px;
+}
+
+/* En la Sección de Proyectos */
+
+/* En la Sección de Contactos */
+
 /* Responsivo para celulares */
 @media only screen and (max-width: 480px){
     .menu {
@@ -94,10 +134,10 @@ section {
         color: white;
     }
 
-    header {
+    .navegacion {
         padding: 0.7rem 1rem;
         align-items: center;
-        max-width: 100%;
+        max-width: 90%;
         padding-left: 0rem;
         padding-right: 0rem;
     }
@@ -118,7 +158,8 @@ section {
         transition: all 0.3s ease;
     }
 
-    article {
+    section {
+        padding-top: 0;
         margin: 1rem 1.5rem;
     }
 }
