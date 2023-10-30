@@ -3,15 +3,24 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     background: #000;
     font-family: 'Poppins', sans-serif;
-    max-height: 100vh;
+    min-height: 100%;
+    /* overflow-y: inherit; */
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 header {
     background-color: #000;
-    opacity: .9;
+    opacity: .75;
     width: 100%;
     position: fixed;
     top: 0;
@@ -64,7 +73,7 @@ nav a.active, nav a:hover {
 
 /* Contenido */ 
 section {
-    padding-top: 20px;
+    padding-top: 30px;
     margin: 2rem 8.5rem;
     color: antiquewhite;
 }
@@ -101,16 +110,16 @@ section {
 }
 
 .social a {
-    color: azure;
+    color: rgb(252, 252, 252);
     font-size: 1.5rem;
     padding: .35rem;
     text-align: center;
-    width: 25px;
+    width: 27px;
     border-radius: 50%;
 }
 
 .social a:hover {
-    color: blue;
+    /* color: ${(props) => props.primario ? '#0e76a8' : 'blue'}; */
     background-color: white;
     transition: all .3s ease-in-out;
 }
@@ -119,14 +128,50 @@ section {
     background-repeat: no-repeat;
     background-position: 0 -75px;
     width: 528px;
+    background-size: cover;
+}
+
+#github:hover {
+    color: #171515;
+}
+
+#linkedin:hover {
+    color: #0e76a8;
 }
 
 /* En la Sección de Proyectos */
+.proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5rem auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e76a8;
+}
+
+.proyectos h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    align-content: center;
+    width: 100%;
+}
+
+.proyecto {
+    background-color: palevioletred;
+    width: 33%;
+}
 
 /* En la Sección de Contactos */
+/* .contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem auto;
+} */
 
 /* Responsivo para celulares */
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 650px){ /* max-width: 480px*/
     .menu {
         display: block;
         font-size: 1.5rem;
@@ -137,9 +182,7 @@ section {
     .navegacion {
         padding: 0.7rem 1rem;
         align-items: center;
-        max-width: 90%;
-        padding-left: 0rem;
-        padding-right: 0rem;
+        max-width: 100%;
     }
 
     nav {
@@ -162,10 +205,4 @@ section {
         padding-top: 0;
         margin: 1rem 1.5rem;
     }
-}
-
-/* Footer */
-footer {
-    /* background-color: black; */
-    color: white;
 }
