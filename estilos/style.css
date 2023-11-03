@@ -4,19 +4,26 @@
 }
 
 html {
-    height: 100%;
+    box-sizing: border-box;
 }
 
 body {
     background: #000;
     font-family: 'Poppins', sans-serif;
     min-height: 100%;
-    /* overflow-y: inherit; */
+    position: relative;
 }
 
+/*
+    Quitar el scroll
+*/
 ::-webkit-scrollbar {
     display: none;
 }
+
+/* 
+    ------------------------- HEADER y Barra de Navegacion -------------------------
+*/
 
 header {
     background-color: #000;
@@ -26,7 +33,6 @@ header {
     top: 0;
 }
 
-/* Barra de navegacion */
 .navegacion {
     padding: 1.7rem 1rem;
     display: flex;
@@ -71,20 +77,29 @@ nav a.active, nav a:hover {
     display: none;
 }
 
-/* Contenido */ 
+/* 
+    ------------------------- CONTENIDO -------------------------
+*/ 
 section {
-    padding-top: 30px;
+    /* padding-top: 30px; */
     margin: 2rem 8.5rem;
     color: antiquewhite;
 }
 
-/* En la Sección de Inicio*/
+/* 
+    ------------------------- En la Sección de INICIO -------------------------
+*/
 .main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin: 5rem auto;
+    min-height: 88vh;
+}
+
+.presentacion {
+    width: 40%;
 }
 
 .main h1 {
@@ -127,7 +142,7 @@ section {
 .imagen {
     background-repeat: no-repeat;
     background-position: 0 -75px;
-    width: 528px;
+    width: 50%;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -145,7 +160,9 @@ section {
     color: #0e76a8;
 }
 
-/* En la Sección de Proyectos */
+/* 
+    ------------------------- En la Sección de PROYECTOS -------------------------
+*/
 .proyectos {
     display: flex;
     flex-wrap: wrap;
@@ -167,7 +184,9 @@ section {
     width: 33%;
 }
 
-/* En la Sección de Contactos */
+/*
+    ------------------------- En la Sección de Contactos -------------------------
+*/
 /* .contact {
     display: flex;
     flex-wrap: wrap;
@@ -176,8 +195,27 @@ section {
     margin: 5rem auto;
 } */
 
+@media only screen and (max-width: 1024px) {
+    .presentacion {
+        width: 100%;
+    }
+
+    .main{
+        flex-wrap: wrap-reverse;
+        align-content: center;
+    }
+
+    .imagen {
+        width: 100%;
+    }
+
+    .imagen img {
+        width: 60%;
+    }
+}
+
 /* Responsivo para celulares */
-@media only screen and (max-width: 600px){ /* max-width: 480px*/
+@media only screen and (max-width: 480px){ /* max-width: 480px*/
     .menu {
         display: block;
         font-size: 1.5rem;
@@ -194,16 +232,15 @@ section {
     nav {
         position: absolute;
         display: grid;
-        top: 75px;
-        width: calc(100% - 40px);
+        top: 51px;
+        width: 100%;
         text-align: center;
-        background-color: red;
-        left: -100%;
-        /* right: 100%; */
+        background-color: black;
+        right: -100%;
     }
 
     #click:checked~nav {
-        left: 0%;
+        right: 0%;
         transition: all 0.3s ease;
     }
 
