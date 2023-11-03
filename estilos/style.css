@@ -83,7 +83,7 @@ nav a.active, nav a:hover {
 section {
     /* padding-top: 30px; */
     margin: 2rem 8.5rem;
-    color: antiquewhite;
+    color: white;
 }
 
 /* 
@@ -166,7 +166,6 @@ section {
 .proyectos {
     margin: 5rem auto;
     padding-top: 83px;
-    background-color: #0e76a8;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 16px;
@@ -175,14 +174,12 @@ section {
 .proyectos h1 {
     font-size: 2rem;
     font-weight: 600;
-    background-color: aqua;
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
 }
 
 .proyecto {
-    background-color: palevioletred;
     height: 300px;
     border-radius: 2%;
 }
@@ -193,18 +190,19 @@ section {
 .contacto {
     /* margin: 5rem auto; */
     padding-top: 83px;
-    background-color: #0e76a8;
-    height: 50rem;
+    height: 40rem;
 }
 
 .contacto h1 {
     font-size: 2rem;
     font-weight: 600;
-    background-color: aqua;
     display: flex;
     justify-content: center;
 }
 
+/*
+    ------------------------- Responsivo para Tabletas -------------------------
+*/
 @media only screen and (max-width: 1024px) {
     .presentacion {
         width: 100%;
@@ -224,8 +222,10 @@ section {
     }
 }
 
-/* Responsivo para celulares */
-@media only screen and (max-width: 480px){ /* max-width: 480px*/
+/* 
+    ------------------------- Responsivo para celulares -------------------------
+*/
+@media only screen and (max-width: 480px){
     .menu {
         display: block;
         font-size: 1.5rem;
@@ -260,6 +260,10 @@ section {
     }
 
     .proyectos {
+        padding-top: 51px;
+    }
+
+    .contacto {
         padding-top: 51px;
     }
 }
