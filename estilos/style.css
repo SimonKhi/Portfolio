@@ -129,6 +129,12 @@ section {
     background-position: 0 -75px;
     width: 528px;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen img {
+    width: 90%;
 }
 
 #github:hover {
@@ -171,7 +177,7 @@ section {
 } */
 
 /* Responsivo para celulares */
-@media only screen and (max-width: 650px){ /* max-width: 480px*/
+@media only screen and (max-width: 600px){ /* max-width: 480px*/
     .menu {
         display: block;
         font-size: 1.5rem;
