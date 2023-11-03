@@ -164,36 +164,46 @@ section {
     ------------------------- En la Sección de PROYECTOS -------------------------
 */
 .proyectos {
-    display: flex;
-    flex-wrap: wrap;
     margin: 5rem auto;
-    justify-content: center;
-    align-items: center;
+    padding-top: 83px;
     background-color: #0e76a8;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
 }
 
 .proyectos h1 {
     font-size: 2rem;
     font-weight: 600;
-    align-content: center;
-    width: 100%;
+    background-color: aqua;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
 }
 
 .proyecto {
     background-color: palevioletred;
-    width: 33%;
+    height: 300px;
+    border-radius: 2%;
 }
 
 /*
     ------------------------- En la Sección de Contactos -------------------------
 */
-/* .contact {
+.contacto {
+    /* margin: 5rem auto; */
+    padding-top: 83px;
+    background-color: #0e76a8;
+    height: 50rem;
+}
+
+.contacto h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: aqua;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5rem auto;
-} */
+    justify-content: center;
+}
 
 @media only screen and (max-width: 1024px) {
     .presentacion {
@@ -232,7 +242,7 @@ section {
     nav {
         position: absolute;
         display: grid;
-        top: 51px;
+        top: 50px;
         width: 100%;
         text-align: center;
         background-color: black;
@@ -247,5 +257,9 @@ section {
     section {
         padding-top: 0;
         margin: 1rem 1.5rem;
+    }
+
+    .proyectos {
+        padding-top: 51px;
     }
 }
