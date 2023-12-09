@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="estilos/style.css"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
     <title>SimonKhi</title>
 </head>
 <body>
@@ -13,7 +12,7 @@
         <input type="checkbox" id="click">
         <div class="navegacion">
             <div class="logo">
-                <a href="#">SimonKhi</a>
+                <a href="" onclick="navigateTo('/')">SimonKhi</a>
             </div>
             <label for="click" class="icono-main">
                 <div class="menu">
@@ -21,10 +20,14 @@
                 </div>
             </label>
             <nav>
-                <a href="#">Inicio</a>
+                <!-- <a href="#">Inicio</a>
                 <a href="#sobre">Sobre mí</a>
                 <a href="#proyectos">Proyectos</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#contacto">Contacto</a> -->
+                <a href="" onclick="navigateTo('/')">Inicio</a>
+                <a href="" onclick="navigateTo('sobre')">Sobre mí</a>
+                <a href="" onclick="navigateTo('proyectos')">Proyectos</a>
+                <a href="" onclick="navigateTo('contacto')">Contacto</a>
             </nav>
         </div>
     </header>
@@ -74,21 +77,35 @@
         <div class="contacto" id="contacto">
             <h1>Contacto</h1>
             <div class="formulario">
-                <form action="">
-                    <div class="inputbox">
-                        <input type="text" name="nombre" required>
-                        <label for="">Nombre</label>
+                <form action="https://formsubmit.co/3d0e0f40ae05c8f39f8aa62c23aac968" method="POST" id="formulario">
+                    <div id="grupo_nombre">
+                        <div class="inputbox" id="campo_nombre">
+                            <input type="text" name="nombre" id="nombre" required>
+                            <label for="nombre">Nombre</label>
+                        </div>
+                        <p class="input_error">El nombre es muy corto</p>
                     </div>
-                    <div class="inputbox">
-                        <input type="email" name="email" id="" required>
-                        <label for="">Email</label>
+                    <div id="grupo_email">
+                        <div class="inputbox" id="campo_email">
+                            <input type="email" name="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <p class="input_error">El email no es válido</p>
                     </div>
-                    <div class="inputbox">
-                        <!-- <input type="text" name="mensaje" id=""> -->
-                        <textarea name="mensaje" id="" required></textarea>
-                        <label for="" id="mensaje">Mensaje</label>
+                    <div id="grupo_mensaje">
+                        <div class="inputbox" id="campo_mensaje">
+                            <textarea name="mensaje" id="mensaje" required></textarea>
+                            <label for="mensaje" id="etiqueta">Mensaje</label>
+                        </div>
+                        <p class="input_error">Escriba algo en el mensaje</p>
                     </div>
-                        <input type="button" value="enviar" class="boton">
+                    <div class="mensaje_error">
+                        <p><i class="fas fa-exclamation-triangle"></i><b> Error:</b> Rellene todos los campos</p>
+                    </div>
+                    <div class="grupo_boton">
+                        <input type="submit" value="Enviar" class="boton" id="enviar">
+                        <p class="mensaje_enviado">Mensaje Enviado</p>
+                    </div>
                 </form>
             </div>
         </div>
@@ -96,5 +113,7 @@
     <footer>
         <h4>Hecho por Cristian Simón Hernández</h4>
     </footer>
+    <script src="js/js.js"></script>
+    <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script>
 </body>
 </html>

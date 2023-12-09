@@ -27,7 +27,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    background: rgba(0, 0, 0, .1);
+    background: rgba(0, 0, 0, .2);
     backdrop-filter: blur(10px);
     z-index: 10;
 }
@@ -95,7 +95,6 @@ section {
     align-items: center;
     margin: 5rem auto;
     min-height: 85vh;
-    background-color: gray;
 }
 
 .presentacion {
@@ -167,7 +166,6 @@ section {
 .sobre {
     /* margin: 5rem auto; */
     padding-top: 85px;
-    background: #0e76a8;
 }
 
 .sobre h1 {
@@ -184,7 +182,6 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 16px;
-    background: aqua;
 }
 
 .proyectos h1 {
@@ -198,7 +195,6 @@ section {
 .proyecto {
     height: 300px;
     border-radius: 2%;
-    background: cornflowerblue;
 }
 
 /*
@@ -211,7 +207,6 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: aquamarine;
 }
 
 .contacto h1 {
@@ -228,14 +223,20 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0e76a8;
 }
 
 .inputbox {
     position: relative;
-    margin: 30px 0;
+    margin: 30px 0 10px 0;
     width: 310px;
+}
+
+#nombre, #email, #mensaje{
     border-bottom: 2px solid #fff;
+}
+
+#nombre:focus, #email:focus, #mensaje:focus{
+    border-bottom: 2px solid rgb(34, 99, 153);
 }
 
 .inputbox label {
@@ -267,23 +268,21 @@ input:valid ~ label {
     color: #fff;
 }
 
-.inputbox #mensaje {
+.formulario #etiqueta {
     top: 20%;
 }
 
-textarea:focus ~ #mensaje {
+textarea:focus ~ #etiqueta {
     top: -5px;
 }
 
-textarea:valid ~ #mensaje {
+textarea:valid ~ #etiqueta {
     top: -5px;
 }
 
 .inputbox textarea{
     min-width: 100%;
-    max-width: 100%;
     min-height: 150px;
-    max-height: 150px;
     background: transparent;
     border: none;
     outline: none;
@@ -294,15 +293,68 @@ textarea:valid ~ #mensaje {
     font-family: 'Poppins', sans-serif;
 }
 
+.input_error{
+    font-size: 14px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.input_error-activo{
+    display: block;
+}
+
+.mensaje_error{
+    margin-top: 30px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #f66860;
+    border-radius: 3px;
+    color: #000;
+    display: none;
+}
+
+.mensaje_error-activo{
+    display: block;
+}
+
+.grupo_boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .boton {
-    width: 100%;
+    width: 60%;
     height: 40px;
+    margin: 30px 0;
     border-radius: 40px;
-    background: #fff;
+    background: #cacaca;
     border: none;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+}
+
+.boton:hover {
+    background: #000;
+    color: #fff;
+}
+
+.mensaje_enviado{
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.mensaje_enviado-activo{
+    display: block;
+}
+
+.incorrecto #nombre, 
+.incorrecto #email, 
+.incorrecto #mensaje{
+    border-bottom: 2px solid #bb2929;
 }
 
 /*
@@ -405,15 +457,7 @@ footer{
         margin: 1rem 1.5rem;
     }
 
-    .sobre {
-        padding-top: 52px;
-    }
-
-    .proyectos {
-        padding-top: 52px;
-    }
-
-    .contacto {
+    .sobre, .proyectos, .contacto{
         padding-top: 52px;
     }
 
