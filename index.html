@@ -35,9 +35,8 @@
 
         <div class="main" id="inicio">
             <div class="presentacion">
-                <h1><span>Hola mundo</span><br> Soy <span style="color: cadetblue;">Cristian Simón</span>
-                </h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, obcaecati earum excepturi minus quam quisquam ex quis voluptas rerum, doloribus deserunt nisi consectetur maxime, fugiat ipsa? Fugiat quia iusto neque.</p>
+                <h1><span>Hola, soy</span><br><span style="color: cadetblue;">Cristian Simón</span></h1>
+                <p>Desarrollador Front-End</p>
                 <div class="social">
                     <a href="https://github.com/SimonKhi" target="_blank" rel="noopener noreferrer" id="github"><i class="fa-brands fa-github"></i></a>
                     <a href="#" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
@@ -50,40 +49,39 @@
 
         <div class="sobre" id="sobre">
             <h1>Sobre Mí</h1>
+            <div>
+                <p>Yo no se que hacer con mi vida</p>
+            </div>
         </div>
 
         <div class="proyectos" id="proyectos">
             <h1>Proyectos</h1>
             <div class="proyecto">
                 <h3>Proyecto 1</h3>
+                <img src="imagenes/alert_house.png" alt="App Alert-House">
+                <div>
+                    
+                </div>
             </div>
             <div class="proyecto">
                 <h3>Proyecto 2</h3>
+                <img src="imagenes/agregar_gastos.png" alt="App Agregar Gastos">
             </div>
             <div class="proyecto">
                 <h3>Proyecto 3</h3>
-            </div>
-            <div class="proyecto">
-                <h3>Proyecto 4</h3>
-            </div>
-            <div class="proyecto">
-                <h3>Proyecto 5</h3>
-            </div>
-            <div class="proyecto">
-                <h3>Proyecto 6</h3>
+                <img src="imagenes/agregar_gastos.png" alt="App Agregar Gastos">
             </div>
         </div>
 
         <div class="contacto" id="contacto">
             <h1>Contacto</h1>
-            <div class="formulario">
-                <form action="https://formsubmit.co/3d0e0f40ae05c8f39f8aa62c23aac968" method="POST" id="formulario">
+                <form method="POST" id="formulario" class="formulario">
                     <div id="grupo_nombre">
                         <div class="inputbox" id="campo_nombre">
-                            <input type="text" name="nombre" id="nombre" required>
+                            <input type="text" name="nombre" id="nombre" maxlength="50" required>
                             <label for="nombre">Nombre</label>
                         </div>
-                        <p class="input_error">El nombre es muy corto</p>
+                        <p class="input_error">El nombre es muy corto y solo escriba letras</p>
                     </div>
                     <div id="grupo_email">
                         <div class="inputbox" id="campo_email">
@@ -99,21 +97,26 @@
                         </div>
                         <p class="input_error">Escriba algo en el mensaje</p>
                     </div>
-                    <div class="mensaje_error">
+                    <div class="mensaje_error" id="mensaje_error">
                         <p><i class="fas fa-exclamation-triangle"></i><b> Error:</b> Rellene todos los campos</p>
                     </div>
                     <div class="grupo_boton">
                         <input type="submit" value="Enviar" class="boton" id="enviar">
-                        <p class="mensaje_enviado">Mensaje Enviado</p>
+                        <p class="mensaje_enviado" id="mensaje_enviado">Mensaje Enviado</p>
                     </div>
                 </form>
-            </div>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                <!-- <script type="text/javascript">
+                    emailjs.init('bm5GA4zxbDd8lc9Hj')
+                </script> -->
         </div>
     </section>
     <footer>
         <h4>Hecho por Cristian Simón Hernández</h4>
     </footer>
+
     <script src="js/js.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script>
 </body>
 </html>

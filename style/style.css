@@ -56,7 +56,7 @@ nav a {
     text-decoration: none;
     padding: 1rem;
     padding: 0.4rem 1rem;
-    font-size: .97rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0px;
 }
@@ -81,8 +81,12 @@ nav a.active, nav a:hover {
     ------------------------- CONTENIDO -------------------------
 */ 
 section {
-    margin: 2rem 8.5rem;
+    margin: 0rem 8.5rem;
     color: white;
+}
+
+section p{
+    font-size: 1.5em;
 }
 
 /* 
@@ -93,22 +97,23 @@ section {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin: 5rem auto;
-    min-height: 85vh;
+    margin-top: 5rem;
+    min-height: calc(100vh - 5rem);
+    background: blue;
 }
 
 .presentacion {
-    width: 40%;
+    width: 50%;
 }
 
 .main h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
 }
 
 .main p{
     margin-top: 1rem;
-    font-size: .98rem;
+    /* font-size: .98rem; */
 }
 
 .main h1 span:nth-child(1) {
@@ -164,37 +169,49 @@ section {
     ------------------------- En la Sección de SOBRE MÍ -------------------------
 */
 .sobre {
-    /* margin: 5rem auto; */
     padding-top: 85px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: goldenrod;
 }
 
 .sobre h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
+    margin-bottom: 3rem;
 }
 
 /* 
     ------------------------- En la Sección de PROYECTOS -------------------------
 */
 .proyectos {
-    margin: 5rem auto;
+    /* margin: 5rem auto; */
     padding-top: 85px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 16px;
+    background: #119200;
 }
 
 .proyectos h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
+    margin-bottom: 3rem;
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
 }
 
 .proyecto {
-    height: 300px;
+    /* height: 300px; */
     border-radius: 2%;
+    background: #0e76a8;
+}
+
+.proyecto img {
+    width: 100%;
 }
 
 /*
@@ -207,6 +224,7 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: salmon;
 }
 
 .contacto h1 {
@@ -223,6 +241,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .inputbox {
@@ -319,6 +338,7 @@ textarea:valid ~ #etiqueta {
 }
 
 .grupo_boton{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -393,7 +413,6 @@ footer{
     }
 
     .main{
-        /* flex-wrap: wrap-reverse; */
         flex-direction: column-reverse;
         justify-content: space-evenly;
         align-content: center;
@@ -458,7 +477,7 @@ footer{
     }
 
     .sobre, .proyectos, .contacto{
-        padding-top: 52px;
+        padding-top: 55px;
     }
 
     .formulario{

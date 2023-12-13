@@ -2,40 +2,84 @@ const formulario = document.getElementById('formulario');
 const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
+const btn = document.getElementById('enviar');
+emailjs.init('bm5GA4zxbDd8lc9Hj')
 
+// Expresiones para validar los campos del formulario
 const expresiones = {
-    nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\[a-zA-Z0-9-.]+$/,
+    nombre: /^[a-zA-ZÀ-ÿ\s]{3,50}$/,
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    mensaje: /^./
 }
 
+const campos = {
+    nombre: false,
+    email: false,
+    mensaje: false
+}
+
+// Comprobar el contenido del formulario con respecto a la expresión de cada input
 const validarFormulario = (e) => {
     switch(e.target.name){
-        case 'usuario':
-            if(expresiones.nombre.test(e.target.value)){
-
-            } else {
-                document.getElementById()
-            }
+        case 'nombre':
+            validarCampo(expresiones.nombre, e.target, 'nombre');
         break;
         case 'email':
-
+            validarCampo(expresiones.correo, e.target, 'email');
         break;
         case 'mensaje':
-
+            validarCampo(expresiones.mensaje, e.target, 'mensaje');
         break;
     }
 }
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-});
+const validarCampo = (expresion, input, campo) => {
+    if(expresion.test(input.value)){
+        document.getElementById(`campo_${campo}`).classList.remove('incorrecto');
+        document.querySelector(`#grupo_${campo} .input_error`).classList.remove('mensaje_error-activo');
+        campos[campo] = true;
+    } else {
+        document.getElementById(`campo_${campo}`).classList.add('incorrecto');
+        document.querySelector(`#grupo_${campo} .input_error`).classList.add('mensaje_error-activo');
+        campos[campo] = false;
+    }
+}
 
-nombre.addEventListener('keyup', validarFormulario);
-nombre.addEventListener('blur', validarFormulario);
+// Realizar un evento cada vez que se use un input
+nombre.addEventListener('keyup', validarFormulario); // Se ejecuta cada vez que se presiona una tecla en el input nombre
+nombre.addEventListener('blur', validarFormulario); // Se ejecuta cuando nos salimos del input
+
 email.addEventListener('keyup', validarFormulario);
 email.addEventListener('blur', validarFormulario);
+
 mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
+
+// Evitar que la página se recarge cuando se presione el botón Enviar
+formulario.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    if(campos.nombre && campos.email && campos.mensaje){
+        
+        btn.value = 'Enviando...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_9ef4fi7';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.value = 'Enviar';
+                alert('Mensaje Enviado!');
+                formulario.reset();
+            }, (err) => {
+                btn.value = 'Enviar';
+                alert(JSON.stringify(err));
+            });
+    }
+});
+/* 
+********** funcion para la barra de navegacion **********
+*/
 
 function navigateTo(section) {
     var direccion = document.getElementById(section);
