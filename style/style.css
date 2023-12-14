@@ -244,9 +244,17 @@ section p{
     flex-direction: column;
 }
 
+#grupo_nombre, #grupo_email {
+    height: 107px;
+}
+
+#grupo_mensaje {
+    height: 210px;
+}
+
 .inputbox {
     position: relative;
-    margin: 30px 0 10px 0;
+    margin: 20px 0 10px 0;
     width: 310px;
 }
 
@@ -337,38 +345,24 @@ textarea:valid ~ #etiqueta {
     display: block;
 }
 
-.grupo_boton{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .boton {
-    width: 60%;
+    width: 250px;
+    /* padding: 0rem 6rem; */
+    position: relative;
     height: 40px;
-    margin: 30px 0;
+    margin: .5rem 0;
     border-radius: 40px;
-    background: #cacaca;
-    border: none;
+    border: 2px solid #fff;
+    color: #fff;
+    /* border: none; */
+    background: none;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
 }
 
 .boton:hover {
-    background: #000;
-    color: #fff;
-}
-
-.mensaje_enviado{
-    font-size: 14px;
-    color: #119200;
-    display: none;
-}
-
-.mensaje_enviado-activo{
-    display: block;
+    border: 2px solid rgb(34, 99, 153);
 }
 
 .incorrecto #nombre, 

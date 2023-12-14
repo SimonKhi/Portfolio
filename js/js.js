@@ -55,28 +55,39 @@ email.addEventListener('blur', validarFormulario);
 mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
 
-// Evitar que la página se recarge cuando se presione el botón Enviar
-formulario.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    if(campos.nombre && campos.email && campos.mensaje){
-        
+function onSubmit(token) {
+    if(token){
         btn.value = 'Enviando...';
-
+    
         const serviceID = 'default_service';
         const templateID = 'template_9ef4fi7';
 
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-                btn.value = 'Enviar';
-                alert('Mensaje Enviado!');
-                formulario.reset();
-            }, (err) => {
-                btn.value = 'Enviar';
-                alert(JSON.stringify(err));
-            });
+        emailjs.sendForm(serviceID, templateID, formulario).then(() => {
+            btn.value = 'Mensaje Enviado';
+            setTimeout(() => {
+                btn.value = "Enviar";
+            },5000)
+            formulario.reset();
+        }, (err) => {
+            btn.value = 'Enviar';
+            alert(JSON.stringify(err));
+        }).catcha(error => {
+            console.log('Error email: ',error);
+        });
+    }
+    grecaptcha.restablecer()
+    formulario.submit();
+}
+
+// Acción a ejecutar cuando se haga submit al formulario
+formulario.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Cuando todos los campos esten llenos se despliega recaptcha
+    if(campos.nombre && campos.email && campos.mensaje){ 
+        grecaptcha.execute()
     }
 });
+
 /* 
 ********** funcion para la barra de navegacion **********
 */

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style/style.css"/>
     <title>SimonKhi</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <header>
@@ -97,26 +98,21 @@
                         </div>
                         <p class="input_error">Escriba algo en el mensaje</p>
                     </div>
-                    <div class="mensaje_error" id="mensaje_error">
-                        <p><i class="fas fa-exclamation-triangle"></i><b> Error:</b> Rellene todos los campos</p>
+                    <div class="g-recaptcha"
+                        data-sitekey="6Ld1lzApAAAAACznNp7kuRPfqa93plJXbvu0TQCl"
+                        data-callback="onSubmit"
+                        data-size="invisible">
                     </div>
-                    <div class="grupo_boton">
-                        <input type="submit" value="Enviar" class="boton" id="enviar">
-                        <p class="mensaje_enviado" id="mensaje_enviado">Mensaje Enviado</p>
-                    </div>
+                    <input type="submit" value="Enviar" id="enviar" class="boton">
                 </form>
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-                <!-- <script type="text/javascript">
-                    emailjs.init('bm5GA4zxbDd8lc9Hj')
-                </script> -->
         </div>
     </section>
     <footer>
         <h4>Hecho por Cristian Simón Hernández</h4>
     </footer>
-
+    
     <script src="js/js.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script>
 </body>
 </html>
