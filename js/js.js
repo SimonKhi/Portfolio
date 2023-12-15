@@ -3,7 +3,7 @@ const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 const btn = document.getElementById('enviar');
-emailjs.init('bm5GA4zxbDd8lc9Hj')
+emailjs.init('bm5GA4zxbDd8lc9Hj');
 
 // Expresiones para validar los campos del formulario
 const expresiones = {
@@ -66,17 +66,14 @@ function onSubmit(token) {
             btn.value = 'Mensaje Enviado';
             setTimeout(() => {
                 btn.value = "Enviar";
-            },5000)
+            },5000);
             formulario.reset();
         }, (err) => {
             btn.value = 'Enviar';
             alert(JSON.stringify(err));
-        }).catcha(error => {
-            console.log('Error email: ',error);
         });
     }
-    grecaptcha.restablecer()
-    formulario.submit();
+    grecaptcha.reset();
 }
 
 // Acción a ejecutar cuando se haga submit al formulario
