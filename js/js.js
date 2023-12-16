@@ -68,7 +68,7 @@ function onSubmit(token) {
             }
         };
           
-        fetch('https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=AIzaSyDMpqtU3hoo7cMXdmOQd_Ur-JPXUweatrk', {
+        fetch('https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=API_KEY', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
