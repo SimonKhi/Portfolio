@@ -59,18 +59,46 @@ function onSubmit(token) {
     if(token){
         btn.value = 'Enviando...';
     
-        const serviceID = 'default_service';
-        const templateID = 'template_9ef4fi7';
+        const recaptchaResponse = token;
+        const secretKey = '6Ld1lzApAAAAANhz7f_YMAGwBLJQlJEPPGEeBykz'; // Reemplaza con tu clave secreta de reCAPTCHA
 
-        emailjs.sendForm(serviceID, templateID, formulario).then(() => {
-            btn.value = 'Mensaje Enviado';
-            setTimeout(() => {
-                btn.value = "Enviar";
-            },5000);
-            formulario.reset();
-        }, (err) => {
+        // Realiza la verificación del reCAPTCHA en el lado del servidor
+        fetch('https://www.google.com/recaptcha/api/siteverify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                secret: secretKey,
+                response: recaptchaResponse
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // El reCAPTCHA fue verificado con éxito, puedes continuar con el envío del formulario
+                const serviceID = 'default_service';
+                const templateID = 'template_9ef4fi7';
+
+                emailjs.sendForm(serviceID, templateID, formulario).then(() => {
+                    btn.value = 'Mensaje Enviado';
+                    setTimeout(() => {
+                        btn.value = "Enviar";
+                    }, 5000);
+                    formulario.reset();
+                }, (err) => {
+                    btn.value = 'Enviar';
+                    alert(JSON.stringify(err));
+                });
+            } else {
+                // El reCAPTCHA no fue verificado, maneja la situación según tus necesidades
+                btn.value = 'Enviar';
+                alert('Error de verificación de reCAPTCHA');
+            }
+        })
+        .catch(error => {
             btn.value = 'Enviar';
-            alert(JSON.stringify(err));
+            console.error('Error al verificar reCAPTCHA:', error);
         });
     }
     grecaptcha.reset();
