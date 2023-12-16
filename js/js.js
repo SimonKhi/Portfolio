@@ -59,23 +59,25 @@ function onSubmit(token) {
     if(token){
         btn.value = 'Enviando...';
     
-        const recaptchaResponse = token;
-        const secretKey = '6Ld1lzApAAAAANhz7f_YMAGwBLJQlJEPPGEeBykz'; // Reemplaza con tu clave secreta de reCAPTCHA
-
         // Realiza la verificación del reCAPTCHA en el lado del servidor
-        fetch('https://www.google.com/recaptcha/api/siteverify', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                secret: secretKey,
-                response: recaptchaResponse
-            })
+        const requestBody = {
+            event: {
+                token: token,
+                expectedAction: 'USER_ACTION',
+                siteKey: '6Ld1lzApAAAAACznNp7kuRPfqa93plJXbvu0TQCl',
+            }
+        };
+          
+        fetch('https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=AIzaSyDMpqtU3hoo7cMXdmOQd_Ur-JPXUweatrk', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+            body: JSON.stringify(requestBody),
         })
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
+            if (data.tokenProperties.valid) {
                 // El reCAPTCHA fue verificado con éxito, puedes continuar con el envío del formulario
                 const serviceID = 'default_service';
                 const templateID = 'template_9ef4fi7';
