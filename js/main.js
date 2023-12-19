@@ -3,7 +3,7 @@ const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 const btn = document.getElementById('enviar');
-emailjs.init('bm5GA4zxbDd8lc9Hj');
+emailjs.init(EMAIL_JS);
 
 // Expresiones para validar los campos del formulario
 const expresiones = {
@@ -56,6 +56,10 @@ mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
 
 function onSubmit(token) {
+    console.log(API_KEY);
+    console.log('Hola');
+    const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${API_KEY}`;
+
     if(token){
         btn.value = 'Enviando...';
     
@@ -64,11 +68,11 @@ function onSubmit(token) {
             event: {
                 token: token,
                 expectedAction: 'USER_ACTION',
-                siteKey: '6Ld1lzApAAAAACznNp7kuRPfqa93plJXbvu0TQCl',
+                siteKey: SITE_KEY,
             }
         };
           
-        fetch('https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=AIzaSyDMpqtU3hoo7cMXdmOQd_Ur-JPXUweatrk', {
+        fetch(API, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -77,6 +81,7 @@ function onSubmit(token) {
         })
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             if (data.tokenProperties.valid) {
                 // El reCAPTCHA fue verificado con éxito, puedes continuar con el envío del formulario
                 const serviceID = 'default_service';
@@ -114,24 +119,3 @@ formulario.addEventListener('submit', function(e) {
         grecaptcha.execute()
     }
 });
-
-/* 
-********** funcion para la barra de navegacion **********
-*/
-
-function navigateTo(section) {
-    var direccion = document.getElementById(section);
-
-    if (direccion) {
-        direccion.scrollIntoView({
-            behavior: 'smooth'
-        });
-    }else{
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    event.preventDefault();
-}
