@@ -56,8 +56,6 @@ mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
 
 function onSubmit(token) {
-    console.log(API_KEY);
-    console.log('Hola');
     const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${API_KEY}`;
 
     if(token){
@@ -81,7 +79,6 @@ function onSubmit(token) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             if (data.tokenProperties.valid) {
                 // El reCAPTCHA fue verificado con éxito, puedes continuar con el envío del formulario
                 const serviceID = 'default_service';
