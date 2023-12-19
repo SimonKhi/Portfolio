@@ -3,7 +3,10 @@ const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 const btn = document.getElementById('enviar');
-emailjs.init(EMAIL_JS);
+const apiKey = process.env.API_KEY;
+const email_JS = process.env.EMAIL_JS;
+const siteKey = process.env.SITE_KEY;
+emailjs.init(email_JS);
 
 // Expresiones para validar los campos del formulario
 const expresiones = {
@@ -56,7 +59,7 @@ mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
 
 function onSubmit(token) {
-    const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${API_KEY}`;
+    const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${apiKey}`;
 
     if(token){
         btn.value = 'Enviando...';
@@ -66,7 +69,7 @@ function onSubmit(token) {
             event: {
                 token: token,
                 expectedAction: 'USER_ACTION',
-                siteKey: SITE_KEY,
+                siteKey: siteKey,
             }
         };
           
@@ -79,7 +82,7 @@ function onSubmit(token) {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.tokenProperties.valid) {
+            if(data.tokenProperties.valid) {
                 // El reCAPTCHA fue verificado con éxito, puedes continuar con el envío del formulario
                 const serviceID = 'default_service';
                 const templateID = 'template_9ef4fi7';
