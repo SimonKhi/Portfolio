@@ -102,7 +102,7 @@ function onSubmit(token) {
         })
         .catch(error => {
             btn.value = 'Enviar';
-            console.error('Error al verificar reCAPTCHA:', error);
+            console.log('Error al verificar reCAPTCHA: ', error);
         });
     }
     grecaptcha.reset();
