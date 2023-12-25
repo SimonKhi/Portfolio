@@ -3,9 +3,9 @@ const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 const btn = document.getElementById('enviar');
-const API_KEY = process.env.API_KEY;
-const EMAIL_JS = process.env.EMAIL_JS;
-const SITE_KEY = process.env.SITE_KEY;
+// const API_KEY = process.env.API_KEY;
+// const EMAIL_JS = process.env.EMAIL_JS;
+// const SITE_KEY = process.env.SITE_KEY;
 emailjs.init(EMAIL_JS);
 
 // Expresiones para validar los campos del formulario
