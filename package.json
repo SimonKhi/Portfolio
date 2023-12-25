@@ -2,7 +2,8 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "- Portfolio de los proyecto que he hecho",
-  "main": "index.html",
+  "author": "Cristian Simon",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/SimonKhi/portfolio.git"
   },
-  "author": "Cristian Simon",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/SimonKhi/portfolio/issues"
   },
-  "homepage": "https://github.com/SimonKhi/portfolio#readme"
+  "homepage": "https://github.com/SimonKhi/portfolio#readme",
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "netlify-cli": "^17.10.1"
+  }
 }
