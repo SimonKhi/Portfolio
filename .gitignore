@@ -1,8 +1,5 @@
 *.psd
-nombredelarchivo.extension
-config.js
-.env
-node_modules
 
-# Local Netlify folder
-.netlify
+nombredelarchivo.extension
+secrets.js
+.env

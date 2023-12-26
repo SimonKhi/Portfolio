@@ -1,9 +1,15 @@
+const script = document.createElement('script');
+script.src = './secrets.js';
+document.head.appendChild(script);
 const formulario = document.getElementById('formulario');
 const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 const btn = document.getElementById('enviar');
-// emailjs.init(`${secret.EMAIL_JS}`);
+const apiKey = window.secrets.API_KEY;
+const email_js = window.secrets.EMAIL_JS;
+const siteKey = window.secrets.SITE_KEY;
+emailjs.init(email_js);
 
 // Expresiones para validar los campos del formulario
 const expresiones = {
@@ -56,19 +62,20 @@ mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
 
 function onSubmit(token) {
-    const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${secret.API_KEY}`;
-
+    
     if(token){
         btn.value = 'Enviando...';
-    
+        
         // Realiza la verificación del reCAPTCHA en el lado del servidor
         const requestBody = {
             event: {
                 token: token,
                 expectedAction: 'USER_ACTION',
-                siteKey: SITE_KEY,
+                siteKey: siteKey,
             }
         };
+        
+        const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${apiKey}`;
           
         fetch(API, {
         method: 'POST',
