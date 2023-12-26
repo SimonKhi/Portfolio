@@ -1,6 +1,3 @@
-const script = document.createElement('script');
-script.src = './secrets.js';
-document.head.appendChild(script);
 const formulario = document.getElementById('formulario');
 const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
