@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -15,9 +15,9 @@ jobs:
 
       - name: Set Secrets as Environment Variables
         run: |
-          echo "::set-env name=API_KEY::${{ secrets.API_KEY }}"
-          echo "::set-env name=EMAIL_JS::${{ secrets.EMAIL_JS }}"
-          echo "::set-env name=SITE_KEY::${{ secrets.SITE_KEY }}"
+          echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
+          echo "EMAIL_JS=${{ secrets.EMAIL_JS }}" >> $GITHUB_ENV
+          echo "SITE_KEY=${{ secrets.SITE_KEY }}" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages
         run: |
