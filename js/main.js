@@ -3,7 +3,7 @@ const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 const btn = document.getElementById('enviar');
-emailjs.init(EMAIL_JS);
+// emailjs.init(`${secret.EMAIL_JS}`);
 
 // Expresiones para validar los campos del formulario
 const expresiones = {
@@ -56,7 +56,7 @@ mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
 
 function onSubmit(token) {
-    const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${API_KEY}`;
+    const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${secret.API_KEY}`;
 
     if(token){
         btn.value = 'Enviando...';
