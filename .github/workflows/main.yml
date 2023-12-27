@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Netlify
 
 on:
   push:
@@ -6,47 +6,30 @@ on:
       - master
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-      - name: Set Secrets as Environment Variables
-        run: |
-          echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
-          echo "EMAIL_JS=${{ secrets.EMAIL_JS }}" >> $GITHUB_ENV
-          echo "SITE_KEY=${{ secrets.SITE_KEY }}" >> $GITHUB_ENV
+    - name: Generate secrets.js
+      run: |
+        echo "window.secrets = {" >> js/secrets.js
+        echo "  API_KEY: '$API_KEY'," >> js/secrets.js
+        echo "  EMAIL_JS: '$EMAIL_JS'," >> js/secrets.js
+        echo "  SITE_KEY: '$SITE_KEY'" >> js/secrets.js
+        echo "};" >> js/secrets.js
 
-      - name: Deploy to GitHub Pages
-        run: |
-          echo "window.secrets = {" >> secrets.js
-          echo "  API_KEY: '$API_KEY'," >> secrets.js
-          echo "  EMAIL_JS: '$EMAIL_JS'," >> secrets.js
-          echo "  SITE_KEY: '$SITE_KEY'" >> secrets.js
-          echo "};" >> secrets.js
-          if [ ! -f ./secrets.js ]; then
-            mv secrets.js .
-          fi
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-          EMAIL_JS: ${{ secrets.EMAIL_JS }}
-          SITE_KEY: ${{ secrets.SITE_KEY }}
+    - name: Move secrets.js to js directory
+      run: mv js/secrets.js js/
 
-      - name: Commit Changes
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add .
-          
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Update secrets.js"
-            git push
-          else
-            echo "No changes detected. Skipping commit and push."
-          fi
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-          EMAIL_JS: ${{ secrets.EMAIL_JS }}
-          SITE_KEY: ${{ secrets.SITE_KEY }}
+    - name: Build and Deploy
+      run: npm run build
+
+    - name: Deploy to Netlify
+      uses: netlify/actions/cli@master
+      with:
+        args: deploy --prod
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETFLIFY_AUTH_TOKEN }}
