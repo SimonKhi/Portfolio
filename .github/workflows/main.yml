@@ -1,4 +1,4 @@
-name: Deploy to Netlify
+name: Deploy to GitHub Page
 
 on:
   push:
@@ -50,10 +50,3 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           EMAIL_JS: ${{ secrets.EMAIL_JS }}
           SITE_KEY: ${{ secrets.SITE_KEY }}
-
-      - name: Deploy to Netlify
-        uses: netlify/actions/cli@master
-        with:
-          args: deploy --prod
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETFLIFY_AUTH_TOKEN }}
