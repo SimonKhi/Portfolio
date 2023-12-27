@@ -3,9 +3,8 @@ const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 const btn = document.getElementById('enviar');
-const apiKey = window.secrets.API_KEY;
-const email_js = window.secrets.EMAIL_JS;
-const siteKey = window.secrets.SITE_KEY;
+const email_js = 'bm5GA4zxbDd8lc9Hj';
+const siteKey = '6Ld1lzApAAAAACznNp7kuRPfqa93plJXbvu0TQCl';
 emailjs.init(email_js);
 
 // Expresiones para validar los campos del formulario
@@ -59,54 +58,21 @@ mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
 
 function onSubmit(token) {
-    
     if(token){
         btn.value = 'Enviando...';
         
-        // Realiza la verificación del reCAPTCHA en el lado del servidor
-        const requestBody = {
-            event: {
-                token: token,
-                expectedAction: 'USER_ACTION',
-                siteKey: siteKey,
-            }
-        };
-        
-        const API = `https://recaptchaenterprise.googleapis.com/v1/projects/portfolio-d9126/assessments?key=${apiKey}`;
-          
-        fetch(API, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-            body: JSON.stringify(requestBody),
-        })
-        .then(response => response.json())
-        .then(data => {
-            if(data.tokenProperties.valid) {
-                // El reCAPTCHA fue verificado con éxito, puedes continuar con el envío del formulario
-                const serviceID = 'default_service';
-                const templateID = 'template_9ef4fi7';
+        const serviceID = 'default_service';
+        const templateID = 'template_9ef4fi7';
 
-                emailjs.sendForm(serviceID, templateID, formulario).then(() => {
-                    btn.value = 'Mensaje Enviado';
-                    setTimeout(() => {
-                        btn.value = "Enviar";
-                    }, 5000);
-                    formulario.reset();
-                }, (err) => {
-                    btn.value = 'Enviar';
-                    alert(JSON.stringify(err));
-                });
-            } else {
-                // El reCAPTCHA no fue verificado, maneja la situación según tus necesidades
-                btn.value = 'Enviar';
-                alert('Error de verificación de reCAPTCHA');
-            }
-        })
-        .catch(error => {
+        emailjs.sendForm(serviceID, templateID, formulario).then(() => {
+            btn.value = 'Mensaje Enviado';
+            setTimeout(() => {
+                btn.value = "Enviar";
+            }, 5000);
+            formulario.reset();
+        }, (err) => {
             btn.value = 'Enviar';
-            console.log('Error al verificar reCAPTCHA: ', error);
+            alert(JSON.stringify(err));
         });
     }
     grecaptcha.reset();
