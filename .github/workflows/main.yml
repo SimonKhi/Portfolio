@@ -22,7 +22,12 @@ jobs:
         echo "};" >> js/secrets.js
 
     - name: Move secrets.js to js directory
-      run: mv js/secrets.js js/
+      run: |
+        if [ ! -f js/secrets.js ]; then
+          mv js/secrets.js js/
+        else
+          echo "secrets.js already exists in the target directory. Skipping move."
+        fi
 
     - name: Build and Deploy
       run: npm run build
