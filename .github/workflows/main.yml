@@ -26,7 +26,9 @@ jobs:
           echo "  EMAIL_JS: '$EMAIL_JS'," >> secrets.js
           echo "  SITE_KEY: '$SITE_KEY'" >> secrets.js
           echo "};" >> secrets.js
-          mv secrets.js .
+          if [ ! -f ./secrets.js ]; then
+            mv secrets.js .
+          fi
         env:
           API_KEY: ${{ secrets.API_KEY }}
           EMAIL_JS: ${{ secrets.EMAIL_JS }}
