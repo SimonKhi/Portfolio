@@ -3,9 +3,7 @@ const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const mensaje = document.getElementById('mensaje');
 const btn = document.getElementById('enviar');
-const email_js = 'bm5GA4zxbDd8lc9Hj';
-const siteKey = '6Ld1lzApAAAAACznNp7kuRPfqa93plJXbvu0TQCl';
-emailjs.init(email_js);
+emailjs.init('bm5GA4zxbDd8lc9Hj');
 
 // Expresiones para validar los campos del formulario
 const expresiones = {
@@ -50,29 +48,24 @@ const validarCampo = (expresion, input, campo) => {
 // Realizar un evento cada vez que se use un input
 nombre.addEventListener('keyup', validarFormulario); // Se ejecuta cada vez que se presiona una tecla en el input nombre
 nombre.addEventListener('blur', validarFormulario); // Se ejecuta cuando nos salimos del input
-
 email.addEventListener('keyup', validarFormulario);
 email.addEventListener('blur', validarFormulario);
-
 mensaje.addEventListener('keyup', validarFormulario);
 mensaje.addEventListener('blur', validarFormulario);
 
 function onSubmit(token) {
     if(token){
         btn.value = 'Enviando...';
-        
         const serviceID = 'default_service';
         const templateID = 'template_9ef4fi7';
-
         emailjs.sendForm(serviceID, templateID, formulario).then(() => {
             btn.value = 'Mensaje Enviado';
-            setTimeout(() => {
-                btn.value = "Enviar";
-            }, 5000);
+            setTimeout(() => {btn.value = "Enviar"}, 5000);
             formulario.reset();
         }, (err) => {
             btn.value = 'Enviar';
             alert(JSON.stringify(err));
+            console.log(err);
         });
     }
     grecaptcha.reset();

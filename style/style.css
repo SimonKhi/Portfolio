@@ -4,20 +4,42 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #000;
+html{
     font-family: 'Poppins', sans-serif;
-    min-height: 100%;
+    background-image: linear-gradient(200deg, rgba(213, 213, 213, 0.01) 0%, rgba(213, 213, 213, 0.01) 14.286%,rgba(140, 140, 140, 0.01) 14.286%, rgba(140, 140, 140, 0.01) 28.572%,rgba(52, 52, 52, 0.01) 28.572%, rgba(52, 52, 52, 0.01) 42.858%,rgba(38, 38, 38, 0.01) 42.858%, rgba(38, 38, 38, 0.01) 57.144%,rgba(159, 159, 159, 0.01) 57.144%, rgba(159, 159, 159, 0.01) 71.42999999999999%,rgba(71, 71, 71, 0.01) 71.43%, rgba(71, 71, 71, 0.01) 85.71600000000001%,rgba(88, 88, 88, 0.01) 85.716%, rgba(88, 88, 88, 0.01) 100.002%),linear-gradient(337deg, rgba(25, 25, 25, 0.01) 0%, rgba(25, 25, 25, 0.01) 12.5%,rgba(150, 150, 150, 0.01) 12.5%, rgba(150, 150, 150, 0.01) 25%,rgba(84, 84, 84, 0.01) 25%, rgba(84, 84, 84, 0.01) 37.5%,rgba(85, 85, 85, 0.01) 37.5%, rgba(85, 85, 85, 0.01) 50%,rgba(188, 188, 188, 0.01) 50%, rgba(188, 188, 188, 0.01) 62.5%,rgba(80, 80, 80, 0.01) 62.5%, rgba(80, 80, 80, 0.01) 75%,rgba(73, 73, 73, 0.01) 75%, rgba(73, 73, 73, 0.01) 87.5%,rgba(219, 219, 219, 0.01) 87.5%, rgba(219, 219, 219, 0.01) 100%),linear-gradient(203deg, rgba(233, 233, 233, 0.01) 0%, rgba(233, 233, 233, 0.01) 25%,rgba(114, 114, 114, 0.01) 25%, rgba(114, 114, 114, 0.01) 50%,rgba(164, 164, 164, 0.01) 50%, rgba(164, 164, 164, 0.01) 75%,rgba(228, 228, 228, 0.01) 75%, rgba(228, 228, 228, 0.01) 100%),linear-gradient(317deg, rgba(139, 139, 139, 0.02) 0%, rgba(139, 139, 139, 0.02) 16.667%,rgba(44, 44, 44, 0.02) 16.667%, rgba(44, 44, 44, 0.02) 33.334%,rgba(166, 166, 166, 0.02) 33.334%, rgba(166, 166, 166, 0.02) 50.001000000000005%,rgba(2, 2, 2, 0.02) 50.001%, rgba(2, 2, 2, 0.02) 66.668%,rgba(23, 23, 23, 0.02) 66.668%, rgba(23, 23, 23, 0.02) 83.33500000000001%,rgba(21, 21, 21, 0.02) 83.335%, rgba(21, 21, 21, 0.02) 100.002%),linear-gradient(328deg, rgba(3, 3, 3, 0.03) 0%, rgba(3, 3, 3, 0.03) 12.5%,rgba(116, 116, 116, 0.03) 12.5%, rgba(116, 116, 116, 0.03) 25%,rgba(214, 214, 214, 0.03) 25%, rgba(214, 214, 214, 0.03) 37.5%,rgba(217, 217, 217, 0.03) 37.5%, rgba(217, 217, 217, 0.03) 50%,rgba(68, 68, 68, 0.03) 50%, rgba(68, 68, 68, 0.03) 62.5%,rgba(118, 118, 118, 0.03) 62.5%, rgba(118, 118, 118, 0.03) 75%,rgba(200, 200, 200, 0.03) 75%, rgba(200, 200, 200, 0.03) 87.5%,rgba(198, 198, 198, 0.03) 87.5%, rgba(198, 198, 198, 0.03) 100%),linear-gradient(97deg, rgba(195, 195, 195, 0.03) 0%, rgba(195, 195, 195, 0.03) 16.667%,rgba(177, 177, 177, 0.03) 16.667%, rgba(177, 177, 177, 0.03) 33.334%,rgba(170, 170, 170, 0.03) 33.334%, rgba(170, 170, 170, 0.03) 50.001000000000005%,rgba(158, 158, 158, 0.03) 50.001%, rgba(158, 158, 158, 0.03) 66.668%,rgba(121, 121, 121, 0.03) 66.668%, rgba(121, 121, 121, 0.03) 83.33500000000001%,rgba(146, 146, 146, 0.03) 83.335%, rgba(146, 146, 146, 0.03) 100.002%),linear-gradient(268deg, rgba(103, 103, 103, 0.03) 0%, rgba(103, 103, 103, 0.03) 25%,rgba(112, 112, 112, 0.03) 25%, rgba(112, 112, 112, 0.03) 50%,rgba(4, 4, 4, 0.03) 50%, rgba(4, 4, 4, 0.03) 75%,rgba(227, 227, 227, 0.03) 75%, rgba(227, 227, 227, 0.03) 100%),linear-gradient(90deg, hsl(98,0%,0%),hsl(98,0%,0%));
+}
+
+body {
     position: relative;
-    margin: 0;
+    min-height: 100vh;
 }
 
 /*
-    Quitar el scroll
+   Scroll
 */
 ::-webkit-scrollbar {
-    display: none;
+    width: 8px;
+    background: #080808;
 }
+
+::-webkit-scrollbar-thumb{
+    background: #3b3b47;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #292931;
+}
+
+/* .fondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0e76a8;
+    z-index: -1;
+} */
 
 /* 
     ------------------------- HEADER y Barra de Navegacion -------------------------
@@ -65,7 +87,7 @@ nav a {
     letter-spacing: 0px;    
 }
 
-nav a.active, nav a:hover {
+nav a:active, nav a:hover {
     background-color: white;
     color: black;
     border-radius: 1rem;
@@ -87,7 +109,7 @@ nav a.active, nav a:hover {
 }
 
 .menu i:nth-child(2){
-    left: 20%;
+    left: 10%;
     top: 5%;
     position: absolute;
     transform: var(--img2);
@@ -101,10 +123,6 @@ section {
     color: white;
 }
 
-section p{
-    font-size: 1.5em;
-}
-
 /* 
     ------------------------- En la Sección de INICIO -------------------------
 */
@@ -112,8 +130,9 @@ section p{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 5.2rem;
-    min-height: calc(100vh - 5.2rem);
+    margin-top: 5.21rem;
+    min-height: calc(100vh - 5.3rem);
+    transition: all 0.3s ease;
 }
 
 .presentacion {
@@ -127,6 +146,7 @@ section p{
 
 .main p{
     margin-top: 1rem;
+    font-size: 1.5rem;
     /* font-size: .98rem; */
 }
 
@@ -184,17 +204,32 @@ section p{
 */
 .sobre {
     padding-top: 85px;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* background: goldenrod; */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
 }
 
 .sobre h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    grid-column: 1 / -1;
+}
+
+.sobre p {
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.sobre div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imagen-sobre img{
+    width: 100%;
 }
 
 /* 
@@ -204,34 +239,71 @@ section p{
     /* margin: 5rem auto; */
     padding-top: 85px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px,100%), 1fr));
-    gap: 16px;
+    /* grid-template-columns: repeat(auto-fit, minmax(min(300px,100%), 1fr)); */
+    grid-template-columns: 1fr;
+    gap: 32px;
     /* background: #119200; */
 }
 
 .proyectos h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 3rem;
-    grid-column: 1 / -1;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: center;
 }
 
 .proyecto {
-    /* height: 300px; */
-    border-radius: 2%;
-    /* background: #0e76a8; */
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    padding: 10px;
+    gap: 16px;
+    background: transparent;
+    border: 1px;
+    transition: all 0.3s ease;
 }
 
 .proyecto img {
     width: 100%;
+    object-fit: cover;
+}
+
+.descripcion {
+    display: grid;
+}
+
+.descripcion h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.descripcion p {
+    margin-bottom: 16px;
+}
+
+.descripcion div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
+    gap: 8px;
+}
+
+.descripcion div span {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    background: #17232e;
+    border-radius: 9999px;
+    font-size: 12px;
 }
 
 .proyecto:hover {
     transform: scale(1.08);
+    border: 1.5px solid grey;
+    /* z-index: 5; */
 }
-
 
 /*
     ------------------------- En la Sección de CONTACTOS -------------------------
@@ -390,13 +462,23 @@ textarea:valid ~ #etiqueta {
 */
 
 footer{
-    background: #171515;
-    color: #0e76a8;
+    border-top: 1px solid rgb(88, 88, 88);
+    color: #fff;
     width: 100%;
-    height: 5rem;
+    /* height: 5rem; */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+
+footer p {
+    margin: 1.8rem 8.5rem;
+}
+
+/* Ocultar el captcha */
+
+.grecaptcha-badge { 
+    visibility: hidden;
 }
 
 /* 
@@ -417,7 +499,6 @@ footer{
         max-height: 75vh;
         flex-direction: column-reverse;
         justify-content: space-evenly;
-        align-content: center;
     }
 
     .presentacion {
@@ -433,7 +514,21 @@ footer{
         max-width: 350px;
     }
 
+    .sobre {
+        grid-template-columns: 1fr;
+    }
+    .imagen-sobre{
+        align-items: center;
+    }
+    .imagen-sobre img {
+        width: 65%;
+        max-width: 350px;
+    }
 
+    .proyecto{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
 
 /* 
@@ -451,7 +546,6 @@ footer{
         padding: 0.7rem 1rem;
         align-items: flex-start;
         max-width: 100%;
-        height: 52px;
         font-size: 1.5rem;
     }
     
@@ -472,7 +566,7 @@ footer{
 
     #click:checked ~ .navegacion {
         height: 13.5rem;
-        transition: all 0.3s ease;
+        transition: all 1s ease;
 
         --img1: scale(0);
         --img2: scale(1);
@@ -480,15 +574,16 @@ footer{
     
     #click:checked ~ .navegacion nav{
         right: 0%;
-        transition: all 0.3s ease;
-        :after{
-            transition: all 0.3s ease;
-        }
+        transition: all 1s ease;
     }
 
     section {
         padding-top: 0;
         margin: 1rem 1.5rem;
+    }
+
+    .main {
+        margin-top: 3.21rem;
     }
 
     .sobre, .proyectos, .contacto{
@@ -497,5 +592,9 @@ footer{
 
     .formulario{
         width: 100%;
+    }
+
+    footer p {
+        margin: 1.8rem 1.5rem;
     }
 }

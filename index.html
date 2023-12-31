@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimonKhi</title>
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
-    <script src="/js/navegate.js"></script>
+    <script src="js/navegate.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="fondo"></div>
     <header>
         <input type="checkbox" id="click">
         <div class="navegacion">
@@ -23,14 +25,10 @@
                 </div>
             </label>
             <nav>
-                <!-- <a href="#">Inicio</a>
-                <a href="#sobre">Sobre mí</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#contacto">Contacto</a> -->
-                <a href="" onclick="navigateTo('/')">Inicio</a>
-                <a href="" onclick="navigateTo('sobre')">Sobre mí</a>
-                <a href="" onclick="navigateTo('proyectos')">Proyectos</a>
-                <a href="" onclick="navigateTo('contacto')">Contacto</a>
+                <a href="*" onclick="navigateTo('/')">Inicio</a>
+                <a href="*" onclick="navigateTo('sobre')">Sobre mí</a>
+                <a href="*" onclick="navigateTo('proyectos')">Proyectos</a>
+                <a href="*" onclick="navigateTo('contacto')">Contacto</a>
             </nav>
         </div>
     </header>
@@ -51,24 +49,56 @@
         </div>
 
         <div class="sobre" id="sobre">
-            <h1>Sobre Mí</h1>
+            <h1>Sobre mí</h1>
             <div>
-                <p>Yo no se que hacer con mi vida</p>
+                <p>Estudié la carrera de Ingeniería en Sistemas Computacionales en la Escuela Superior de Cómputo. </p> 
+                <p>Mi enfoque principal es el desarrollo Front-End, haciendo uso de las tecnologías HMTL, CSS, JavaScript y React JS. Con el objetivo es crear sitios web responsivos, adaptados a los dispositivos más utilizados en la actualidad.</p>
+                <p>Tengo como objetivo convertime en desarrollador Full stack, donde planeo ampliar mis conocimientos en bases de datos y explorar las últimas tecnologías disponibles en el campo.</p>
             </div>
+            <div class="imagen-sobre">
+                <img src="imagenes/TheBoy.jpg" alt="">
+            </div>
+            <!-- <p>Hola, soy Cristian Simón Hernández, egresado de la carrera de Ingeniería en Sistemas Computacionales en la Escuela Superior de Cómputo. Mi enfoque principal es el desarrollo Front-End, utilizando tecnologías como HTML, CSS, JavaScript y React JS. Mi objetivo es crear sitios web responsivos y atractivos, adaptados a los dispositivos más utilizados en la actualidad.</p> -->
         </div>
 
         <div class="proyectos" id="proyectos">
             <h1>Proyectos</h1>
             <div class="proyecto">
-                <h3>Proyecto 1</h3>
-                <img src="imagenes/alert_house.png" alt="App Alert-House">
                 <div>
-                    
+                    <a href="https://alert-house.web.app/" target="_blank" rel="noopener noreferrer">
+                        <img src="imagenes/alert_house.png" alt="App Alert-House">
+                    </a>
+                </div>
+                <div class="descripcion">
+                    <h3>Alert House</h3>
+                    <p>Simulación de un sistema de detección no autorizada en el hogar, donde el usuario puede agregar sensores, haci como activarlos o desactivarlos, lo mismo con la alarma de seguridad</p>
+                    <div class="herramientas">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Style Components</span>
+                        <span>Firebase</span>
+                        <span>Ant Desing</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
                 </div>
             </div>
             <div class="proyecto">
-                <h3>Proyecto 2</h3>
-                <img src="imagenes/agregar_gastos.png" alt="App Agregar Gastos">
+                <a href="https://curso-react-lista-gastos-cf2e3.web.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="imagenes/agregar_gastos.png" alt="App Agregar Gastos">
+                </a>
+                <div class="descripcion">
+                    <h3>Agregar Gastos</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere magni fugiat illum autem unde delectus quo, voluptates, excepturi ut sapiente debitis, voluptatibus aut voluptatem ad distinctio non eaque earum placeat.</p>
+                    <div class="herramientas">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Style Components</span>
+                        <span>Firebase</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
             </div>
             <!-- <div class="proyecto">
                 <h3>Proyecto 3</h3>
@@ -109,11 +139,12 @@
                 </form>
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         </div>
+
     </section>
     <footer>
-        <h4>Hecho por Cristian Simón Hernández</h4>
+        <p>© 2023 por Cristian Simón</p>
     </footer>
+
     <script src="js/main.js"></script>
-    <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script>
 </body>
 </html>
