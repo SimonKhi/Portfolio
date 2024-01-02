@@ -6,7 +6,7 @@ function navigateTo(section) {
     var direccion = document.getElementById(section);
 
     if(direccion) 
-        direccion.scrollIntoView({behavior: 'smooth'}) 
+        direccion.scrollIntoView() 
     else
-        window.scrollTo({top: 0,behavior: 'smooth'});
+        window.scrollTo({top: 0});
 }

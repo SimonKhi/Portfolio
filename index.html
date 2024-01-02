@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Porfolio de los proyectos relacionados al Desarrollo Front-End de Cristian S. H. (SimonKhi)">
     <title>SimonKhi</title>
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
     <script src="js/navegate.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <input type="checkbox" id="click">
         <div class="navegacion">
             <div class="logo">
-                <a href="" onclick="navigateTo('/')">SimonKhi</a>
+                <a href="/" onclick="navigateTo('/')">SimonKhi</a>
             </div>
             <label for="click" class="icono-main">
                 <div class="menu">
@@ -25,10 +25,10 @@
                 </div>
             </label>
             <nav>
-                <a href="*" onclick="navigateTo('/')">Inicio</a>
-                <a href="*" onclick="navigateTo('sobre')">Sobre mí</a>
-                <a href="*" onclick="navigateTo('proyectos')">Proyectos</a>
-                <a href="*" onclick="navigateTo('contacto')">Contacto</a>
+                <a href="/" onclick="navigateTo('/')">Inicio</a>
+                <a href="#sobre" onclick="navigateTo('sobre')">Sobre mí</a>
+                <a href="#proyectos" onclick="navigateTo('proyectos')">Proyectos</a>
+                <a href="#contacto" onclick="navigateTo('contacto')">Contacto</a>
             </nav>
         </div>
     </header>
@@ -58,7 +58,6 @@
             <div class="imagen-sobre">
                 <img src="imagenes/TheBoy.jpg" alt="">
             </div>
-            <!-- <p>Hola, soy Cristian Simón Hernández, egresado de la carrera de Ingeniería en Sistemas Computacionales en la Escuela Superior de Cómputo. Mi enfoque principal es el desarrollo Front-End, utilizando tecnologías como HTML, CSS, JavaScript y React JS. Mi objetivo es crear sitios web responsivos y atractivos, adaptados a los dispositivos más utilizados en la actualidad.</p> -->
         </div>
 
         <div class="proyectos" id="proyectos">
@@ -102,10 +101,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="proyecto">
-                <h3>Proyecto 3</h3>
-                <img src="imagenes/agregar_gastos.png" alt="App Agregar Gastos">
-            </div> -->
         </div>
 
         <div class="contacto" id="contacto">
@@ -147,6 +142,7 @@
         <p>© 2024 por Cristian Simón</p>
     </footer>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="js/main.js"></script>
 </body>
 </html>
