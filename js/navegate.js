@@ -4,7 +4,6 @@
 function navigateTo(section) {
     event.preventDefault();
     var direccion = document.getElementById(section);
-
     if(direccion) 
         direccion.scrollIntoView() 
     else

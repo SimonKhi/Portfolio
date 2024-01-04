@@ -1,1 +1,148 @@
-<!DOCTYPE html><html lang="es"><head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="description" content="Porfolio de los proyectos relacionados al Desarrollo Front-End de Cristian S. H. (SimonKhi)"> <title>SimonKhi</title> <link rel="stylesheet" type="text/css" href="style/style.css"/> <script src="js/navegate.js"></script> <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script></head><body> <div class="fondo"></div> <header> <input type="checkbox" id="click"> <div class="navegacion"> <div class="logo"> <a href="/" onclick="navigateTo('/')">SimonKhi</a> </div> <label for="click" class="icono-main"> <div class="menu"> <i class="fa-solid fa-bars"></i> <i class="fa-solid fa-x"></i> </div> </label> <nav> <a href="/" onclick="navigateTo('/')">Inicio</a> <a href="#sobre" onclick="navigateTo('sobre')">Sobre mí</a> <a href="#proyectos" onclick="navigateTo('proyectos')">Proyectos</a> <a href="#contacto" onclick="navigateTo('contacto')">Contacto</a> </nav> </div> </header> <section> <div class="main" id="inicio"> <div class="presentacion"> <h1><span>Hola, soy</span><br><span style="color: cadetblue;">Cristian Simón</span></h1> <p>Desarrollador Front-End</p> <div class="social"> <a href="https://github.com/SimonKhi" target="_blank" rel="noopener noreferrer" id="github" title="GitHub"><i class="fa-brands fa-github"></i></a> <a href="https://www.linkedin.com/in/simonkhi/" target="_blank" rel="noopener noopener" id="linkedin" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a> </div> </div> <div class="imagen"> <img src="imagenes/TheBoy.jpg" alt=""> </div> </div> <div class="sobre" id="sobre"> <h1>Sobre mí</h1> <div> <p>Estudié la carrera en Ingeniería en Sistemas Computacionales en la Escuela Superior de Cómputo. </p> <p>Mi enfoque principal es el desarrollo Front-End, haciendo uso de las tecnologías HMTL, CSS, JavaScript y React JS. Con el objetivo es crear sitios web responsivos, adaptados a los dispositivos más utilizados en la actualidad.</p> <p>Tengo como objetivo convertime en desarrollador Full stack, donde planeo ampliar mis conocimientos en bases de datos y explorar las últimas tecnologías disponibles en el campo.</p> </div> <div class="imagen-sobre"> <img src="imagenes/TheBoy.jpg" alt=""> </div> </div> <div class="proyectos" id="proyectos"> <h1>Proyectos</h1> <div class="proyecto"> <div> <a href="https://alert-house.web.app/" target="_blank" rel="noopener noreferrer"> <img src="imagenes/alert_house.png" alt="App Alert-House"> </a> </div> <div class="descripcion"> <h2>Alert House</h2> <p>Simulación de un sistema de detección no autorizada en el hogar, donde el usuario puede agregar sensores, haci como activarlos o desactivarlos, lo mismo con la alarma de seguridad.</p> <div class="herramientas"> <span>React</span> <span>JavaScript</span> <span>Style Components</span> <span>Firebase</span> <span>Ant Desing</span> <span>HTML</span> <span>CSS</span> </div> </div> </div> <div class="proyecto"> <div> <a href="https://curso-react-lista-gastos-cf2e3.web.app/" target="_blank" rel="noopener noreferrer"> <img src="imagenes/agregar_gastos.png" alt="App Agregar Gastos"> </a> </div> <div class="descripcion"> <h2>Agregar Gastos</h2> <p>Aplicación en donde el usuario puede agregar los gastos que ha hecho, pudiendo clasificarlo por la categoría y la fecha en que corresponde el gasto, y así poder llevar un registro durante el mes.</p> <div class="herramientas"> <span>React</span> <span>JavaScript</span> <span>Style Components</span> <span>Firebase</span> <span>HTML</span> <span>CSS</span> </div> </div> </div> </div> <div class="contacto" id="contacto"> <h1>Contacto</h1> <form method="POST" id="formulario" class="formulario"> <div id="grupo_nombre"> <div class="inputbox" id="campo_nombre"> <input type="text" name="nombre" id="nombre" maxlength="50" required> <label for="nombre">Nombre</label> </div> <p class="input_error">El nombre es muy corto y solo escriba letras</p> </div> <div id="grupo_email"> <div class="inputbox" id="campo_email"> <input type="email" name="email" id="email" required> <label for="email">Email</label> </div> <p class="input_error">El email no es válido</p> </div> <div id="grupo_mensaje"> <div class="inputbox" id="campo_mensaje"> <textarea name="mensaje" id="mensaje" required></textarea> <label for="mensaje" id="etiqueta">Mensaje</label> </div> <p class="input_error">Escriba algo en el mensaje</p> </div> <div class="g-recaptcha" data-sitekey="6Ld1lzApAAAAACznNp7kuRPfqa93plJXbvu0TQCl" data-callback="onSubmit" data-size="invisible"> </div> <input type="submit" value="Enviar" id="enviar" class="boton"> </form> <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> </div> </section> <footer> <p>© 2024 por Cristian Simón</p> </footer> <script src="https://www.google.com/recaptcha/api.js" async defer></script> <script src="js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Porfolio de los proyectos relacionados al Desarrollo Front-End de Cristian S. H. (SimonKhi)">
+    <title>SimonKhi</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <script src="js/navegate.js"></script>
+</head>
+<body>
+    <div class="fondo"></div>
+    <header>
+        <input type="checkbox" id="click">
+        <div class="navegacion">
+            <div class="logo">
+                <a href="/" onclick="navigateTo('/')">SimonKhi</a>
+            </div>
+            <label for="click" class="icono-main">
+                <div class="menu">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+            </label>
+            <nav>
+                <a href="/" onclick="navigateTo('/')">Inicio</a>
+                <a href="#sobre" onclick="navigateTo('sobre')">Sobre mí</a>
+                <a href="#proyectos" onclick="navigateTo('proyectos')">Proyectos</a>
+                <a href="#contacto" onclick="navigateTo('contacto')">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <section>
+
+        <div class="main" id="inicio">
+            <div class="presentacion">
+                <h1><span>Hola, soy</span><br><span style="color: cadetblue;">Cristian Simón</span></h1>
+                <p>Desarrollador Front-End</p>
+                <div class="social">
+                    <a href="https://github.com/SimonKhi" target="_blank" rel="noopener noreferrer" id="github" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/simonkhi/" target="_blank" rel="noopener noopener" id="linkedin" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="img/TheBoy.webp" alt="">
+            </div>
+        </div>
+
+        <div class="sobre" id="sobre">
+            <h1>Sobre mí</h1>
+            <div>
+                <p>Estudié la carrera en Ingeniería en Sistemas Computacionales en la Escuela Superior de Cómputo. </p> 
+                <p>Mi enfoque principal es el desarrollo Front-End, haciendo uso de las tecnologías HMTL, CSS, JavaScript y React JS. Con el objetivo es crear sitios web responsivos, adaptados a los dispositivos más utilizados en la actualidad.</p>
+                <p>Tengo como objetivo convertime en desarrollador Full stack, donde planeo ampliar mis conocimientos en bases de datos y explorar las últimas tecnologías disponibles en el campo.</p>
+            </div>
+            <div class="imagen-sobre">
+                <img src="img/TheBoy.webp" alt="">
+            </div>
+        </div>
+
+        <div class="proyectos" id="proyectos">
+            <h1>Proyectos</h1>
+            <div class="proyecto">
+                <div>
+                    <a href="https://alert-house.web.app/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/alert_house.webp" alt="App Alert-House">
+                    </a>
+                </div>
+                <div class="descripcion">
+                    <h2>Alert House</h2>
+                    <p>Simulación de un sistema de detección no autorizada en el hogar, donde el usuario puede agregar sensores, haci como activarlos o desactivarlos, lo mismo con la alarma de seguridad.</p>
+                    <div class="herramientas">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Style Components</span>
+                        <span>Firebase</span>
+                        <span>Ant Desing</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div>
+                    <a href="https://curso-react-lista-gastos-cf2e3.web.app/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/agregar_gastos.webp" alt="App Agregar Gastos">
+                    </a>
+                </div>
+                <div class="descripcion">
+                    <h2>Agregar Gastos</h2>
+                    <p>Aplicación en donde el usuario puede agregar los gastos que ha hecho, pudiendo clasificarlo por la categoría y la fecha en que corresponde el gasto, y así poder llevar un registro durante el mes.</p>
+                    <div class="herramientas">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Style Components</span>
+                        <span>Firebase</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contacto" id="contacto">
+            <h1>Contacto</h1>
+                <form method="POST" id="formulario" class="formulario">
+                    <div id="grupo_nombre">
+                        <div class="inputbox" id="campo_nombre">
+                            <input type="text" name="nombre" id="nombre" maxlength="50" required>
+                            <label for="nombre">Nombre</label>
+                        </div>
+                        <p class="input_error">El nombre es muy corto y solo escriba letras</p>
+                    </div>
+                    <div id="grupo_email">
+                        <div class="inputbox" id="campo_email">
+                            <input type="email" name="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <p class="input_error">El email no es válido</p>
+                    </div>
+                    <div id="grupo_mensaje">
+                        <div class="inputbox" id="campo_mensaje">
+                            <textarea name="mensaje" id="mensaje" required></textarea>
+                            <label for="mensaje" id="etiqueta">Mensaje</label>
+                        </div>
+                        <p class="input_error">Escriba algo en el mensaje</p>
+                    </div>
+                    <div class="g-recaptcha"
+                        data-sitekey="6Ld1lzApAAAAACznNp7kuRPfqa93plJXbvu0TQCl"
+                        data-callback="onSubmit"
+                        data-size="invisible">
+                    </div>
+                    <input type="submit" value="Enviar" id="enviar" class="boton">
+                </form>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        </div>
+
+    </section>
+    <footer>
+        <p>© 2024 por Cristian Simón</p>
+    </footer>
+    
+    <script src="https://kit.fontawesome.com/df7be41588.js" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
