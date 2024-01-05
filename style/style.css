@@ -43,6 +43,8 @@ header {
     background: rgba(0, 0, 0, .2);
     backdrop-filter: blur(10px);
     z-index: 10;
+    --img1: scale(1);
+    --img2: scale(0);
 }
 
 .navegacion {
@@ -52,10 +54,7 @@ header {
     align-items: center;
     max-width: 80%;
     margin: auto;
-    transition: 0.3s ease-out 0s;
-
-    --img1: scale(1);
-    --img2: scale(0);
+    transition: all 0.3s ease-out 0s;
 }
 
 .logo {
@@ -93,6 +92,10 @@ nav a:active, nav a:hover {
     display: none;
     cursor: pointer;
     position: relative;
+}
+
+.menu i {
+    transition: 0.3s ease-in-out;
 }
 
 .menu i:nth-child(1){
@@ -163,21 +166,22 @@ section {
 }
 
 .social a:hover {
-    background-color: white;
+    background-color: #e7e7e7;
 }
 
 .imagen {
     background-repeat: no-repeat;
     background-position: 0 -75px;
-    width: 45%;
+    width: 50%;
     background-size: cover;
     display: flex;
     justify-content: center;
 }
 
 .imagen img {
-    width: 90%;
-    max-width: 500px;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
     height: auto;
 }
 
@@ -189,6 +193,9 @@ section {
     color: #0e76a8;
 }
 
+#gmail:hover{
+    color: #dc3c2e;
+}
 /* 
     ------------------------- En la Sección de SOBRE MÍ -------------------------
 */
@@ -254,6 +261,12 @@ section {
     width: 50%;
 }
 
+.proyecto a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .proyecto img {
     width: 100%;
     height: auto;
@@ -293,7 +306,7 @@ section {
 
 .proyecto:hover {
     transform: scale(1.08);
-    border: 1px solid grey;
+    border: 1px solid #5d5d5d;
     z-index: 5;
 }
 
@@ -543,7 +556,6 @@ footer p {
         align-items: flex-start;
         max-width: 100%;
         font-size: 1.5rem;
-        /* transition: all 0.3s ease; */
     }
     
     nav {
@@ -564,7 +576,6 @@ footer p {
 
     #click:checked ~ .navegacion {
         height: 13.5rem;
-
         --img1: scale(0);
         --img2: scale(1);
     }
